@@ -1,0 +1,7 @@
+loc dir = new Vec2(3, 4);
+
+println(dir^);
+println(2 * dir);
+println(dir / 2);
+dir +! 2;
+println(dir);
