@@ -66,8 +66,7 @@ public final class Artifakt implements ApplicationListener
    }
    
    /**
-    * @return
-    *       How long Artifakt has been running, in seconds.
+    * @return How long Artifakt has been running, in seconds.
     */
    public static float getLifeTime()
    {
@@ -98,7 +97,7 @@ public final class Artifakt implements ApplicationListener
          script = engine.compile(Gdx.files.internal("test.laye").reader());
          script.eval();
       }
-      catch (ScriptException e)
+      catch (final ScriptException e)
       {
          e.printStackTrace();
       }
@@ -108,7 +107,7 @@ public final class Artifakt implements ApplicationListener
    }
    
    @Override
-   public void resize(int width, int height)
+   public void resize(final int width, final int height)
    {
       state.resize(width, height);
    }
@@ -126,7 +125,7 @@ public final class Artifakt implements ApplicationListener
       }
       
       state.update(Gdx.graphics.getDeltaTime());
-
+      
       Gdx.gl.glClearColor(0, 0, 0, 1);
       Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
       

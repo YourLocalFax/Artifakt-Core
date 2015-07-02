@@ -11,16 +11,17 @@ public abstract class GameState extends Instance
    
    public abstract void resize(int width, int height);
    
+   @Override
    public abstract void update(float delta);
    
    public abstract void render();
-
+   
    @Override
    public Instance getParent()
    {
       return null;
    }
-
+   
    @Override
    public void setParent(final Instance parent)
    {

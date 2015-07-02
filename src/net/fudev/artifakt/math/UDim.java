@@ -41,7 +41,7 @@ public class UDim
       builder.append(", ").append(offset);
       return builder.append(')').toString();
    }
-
+   
    public void set(final float scale, final int offset)
    {
       this.scale = scale;

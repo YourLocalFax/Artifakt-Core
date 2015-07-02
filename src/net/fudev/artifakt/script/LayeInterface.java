@@ -40,8 +40,8 @@ public final class LayeInterface
       final String scriptFileName = scriptFile.getName();
       if (!scriptFileName.endsWith(".laye"))
       {
-         throw new IllegalArgument("expected a .laye file, got "
-               + scriptFileName.substring(scriptFileName.lastIndexOf('.')));
+         throw new IllegalArgument(
+               "expected a .laye file, got " + scriptFileName.substring(scriptFileName.lastIndexOf('.')));
       }
    }
    

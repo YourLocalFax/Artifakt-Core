@@ -18,12 +18,12 @@ public class Batch2D extends SpriteBatch
       this(1000, null);
    }
    
-   public Batch2D(int size)
+   public Batch2D(final int size)
    {
       this(size, null);
    }
    
-   public Batch2D(int size, ShaderProgram defaultShader)
+   public Batch2D(final int size, final ShaderProgram defaultShader)
    {
       super(size, defaultShader);
       final Pixmap pixmap = new Pixmap(1, 1, Format.RGBA8888);

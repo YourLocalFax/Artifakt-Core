@@ -21,43 +21,43 @@ public class Vec2 extends Vector2
    }
    
    @LayeCtor(name = "xy")
-   public Vec2(float a)
+   public Vec2(final float a)
    {
       super(a, a);
    }
    
    @LayeCtor(name = "xy")
-   public Vec2(int a)
+   public Vec2(final int a)
    {
       super(a, a);
    }
    
    @LayeCtor
-   public Vec2(float x, float y)
+   public Vec2(final float x, final float y)
    {
       super(x, y);
    }
    
    @LayeCtor
-   public Vec2(int x, float y)
+   public Vec2(final int x, final float y)
    {
       super(x, y);
    }
    
    @LayeCtor
-   public Vec2(float x, int y)
+   public Vec2(final float x, final int y)
    {
       super(x, y);
    }
    
    @LayeCtor
-   public Vec2(int x, int y)
+   public Vec2(final int x, final int y)
    {
       super(x, y);
    }
    
    @LayeCtor(name = "copy")
-   public Vec2(Vector2 v)
+   public Vec2(final Vector2 v)
    {
       super(v);
    }
@@ -330,5 +330,19 @@ public class Vec2 extends Vector2
    public Vec2 idivLocal(final int scalar)
    {
       return idivLocal((float) scalar);
+   }
+   
+   // ----- other operators
+   
+   @LayeMethod
+   public float dot(final Vec2 other)
+   {
+      return x * other.x + y * other.y;
+   }
+   
+   @LayeMethod
+   public float dot(final float ox, final float oy)
+   {
+      return x * ox + y * oy;
    }
 }

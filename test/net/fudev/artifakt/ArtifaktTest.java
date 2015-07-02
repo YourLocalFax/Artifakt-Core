@@ -7,36 +7,36 @@ import net.fudev.artifakt.state.GameState;
 
 public final class ArtifaktTest extends GameState
 {
-   public static void main(String[] args) throws ScriptException
+   public static void main(final String[] args) throws ScriptException
    {
       Artifakt.create(new ArtifaktTest());
    }
    
    private Batch2D batch = null;
    
-   private float pulseSpeed = 2.25f;
+   private final float pulseSpeed = 2.25f;
    private float offset = 0.0f, rotation = 0.0f, scale = 1.0f;
-
+   
    @Override
    public void create()
    {
       batch = new Batch2D();
    }
-
+   
    @Override
    public void dispose()
    {
       batch.dispose();
    }
-
+   
    @Override
-   public void resize(int width, int height)
+   public void resize(final int width, final int height)
    {
       batch.resize(width, height);
    }
-
+   
    @Override
-   public void update(float delta)
+   public void update(final float delta)
    {
       final float sin = (float) Math.sin(Artifakt.getLifeTime() * Math.PI * pulseSpeed);
       
@@ -44,7 +44,7 @@ public final class ArtifaktTest extends GameState
       rotation = 15.0f * sin;
       scale = 0.5f + Math.abs(sin) * 0.5f;
    }
-
+   
    @Override
    public void render()
    {

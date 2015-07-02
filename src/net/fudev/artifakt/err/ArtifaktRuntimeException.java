@@ -8,33 +8,33 @@ public abstract class ArtifaktRuntimeException extends RuntimeException
    {
       super();
    }
-
-   public ArtifaktRuntimeException(String message, Throwable cause, boolean enableSuppression,
-         boolean writableStackTrace)
+   
+   public ArtifaktRuntimeException(final String message, final Throwable cause, final boolean enableSuppression,
+         final boolean writableStackTrace)
    {
       super(message, cause, enableSuppression, writableStackTrace);
    }
-
-   public ArtifaktRuntimeException(String message, Throwable cause)
+   
+   public ArtifaktRuntimeException(final String message, final Throwable cause)
    {
       super(message, cause);
    }
-
-   public ArtifaktRuntimeException(String message)
+   
+   public ArtifaktRuntimeException(final String message)
    {
       super(message);
    }
-
-   public ArtifaktRuntimeException(Throwable cause)
+   
+   public ArtifaktRuntimeException(final Throwable cause)
    {
       super(cause);
    }
-
+   
    @Override
    public String toString()
    {
       final String s = getClass().getSimpleName();
       final String message = getLocalizedMessage();
-      return message != null ? (s + ": " + message) : s;
+      return message != null ? s + ": " + message : s;
    }
 }

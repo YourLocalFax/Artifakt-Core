@@ -3,27 +3,28 @@ package net.fudev.artifakt.err;
 public class IllegalState extends ArtifaktRuntimeException
 {
    private static final long serialVersionUID = -2602167896056704703L;
-
+   
    public IllegalState()
    {
    }
    
-   public IllegalState(String message)
+   public IllegalState(final String message)
    {
       super(message);
    }
    
-   public IllegalState(Throwable cause)
+   public IllegalState(final Throwable cause)
    {
       super(cause);
    }
    
-   public IllegalState(String message, Throwable cause)
+   public IllegalState(final String message, final Throwable cause)
    {
       super(message, cause);
    }
    
-   public IllegalState(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace)
+   public IllegalState(final String message, final Throwable cause, final boolean enableSuppression,
+         final boolean writableStackTrace)
    {
       super(message, cause, enableSuppression, writableStackTrace);
    }
