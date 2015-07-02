@@ -6,6 +6,7 @@ import java.io.Reader;
 import javax.script.ScriptEngineFactory;
 
 import net.fudev.artifakt.err.IllegalArgument;
+import net.fudev.artifakt.graphics.g2d.Batch2D;
 import net.fudev.artifakt.math.UDim;
 import net.fudev.artifakt.math.UDim2;
 import net.fudev.artifakt.math.Vec2;
@@ -21,9 +22,13 @@ public final class LayeInterface
    public static LayeScriptEngine createLayeScriptEngine()
    {
       final LayeScriptEngine engine = (LayeScriptEngine) factory.getScriptEngine();
+      
+      engine.put(Batch2D.class);
+      
       engine.put(Vec2.class);
       engine.put(UDim.class);
       engine.put(UDim2.class);
+      
       return engine;
    }
    

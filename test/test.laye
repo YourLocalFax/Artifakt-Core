@@ -1,7 +1,17 @@
-loc dir = new Vec2(3, 4);
+fn Create = do
+	batch <- new Batch2D;
+end
 
-println(dir^);
-println(2 * dir);
-println(dir / 2);
-dir +! 2;
-println(dir);
+fn Resize(width, height) = do
+	batch.Resize(width, height);
+end
+
+fn Render = do
+	batch.Begin();
+	batch.Rect(10, 10, 50, 50);
+	batch.End();
+end
+
+fn Dispose = do
+	batch.Dispose();
+end

@@ -1,7 +1,5 @@
 package net.fudev.artifakt;
 
-import javax.script.ScriptException;
-
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
@@ -9,12 +7,9 @@ import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
 import com.badlogic.gdx.graphics.GL20;
 
 import net.fudev.artifakt.err.IllegalArgument;
-import net.fudev.artifakt.script.LayeInterface;
 import net.fudev.artifakt.state.GameState;
 import net.fudev.artifakt.util.NotNull;
 import net.fudev.artifakt.util.Nullable;
-import net.fudev.laye.LayeScriptEngine;
-import net.fudev.laye.LayeScriptEngine.LayeScript;
 
 public final class Artifakt implements ApplicationListener
 {
@@ -89,19 +84,6 @@ public final class Artifakt implements ApplicationListener
    @Override
    public void create()
    {
-      final LayeScriptEngine engine = LayeInterface.createLayeScriptEngine();
-      
-      LayeScript script;
-      try
-      {
-         script = engine.compile(Gdx.files.internal("test.laye").reader());
-         script.eval();
-      }
-      catch (final ScriptException e)
-      {
-         e.printStackTrace();
-      }
-      
       startTimeNanos = System.nanoTime();
       state.create();
    }
